@@ -127,6 +127,74 @@ namespace DesktopApp
                 MessageBox.Show("Error: " + ex.Message);
             }
         }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int shipperId;
+                if (int.TryParse(lblShipperID.Text, out shipperId))
+                {
+                    //do the update...
+                    var info = new Shipper()
+                    {
+                        ShipperID = shipperId,
+                        CompanyName = txtCompanyName.Text,
+                        Phone = txtPhone.Text
+                    };
+
+                    NorthwindManager mgr = new NorthwindManager();
+                    mgr.UpdateShipper(info);
+                    PopulateShippersComboBox();
+                    cboShippers.SelectedValue = shipperId;
+
+                }
+                else
+                {
+                    MessageBox.Show("Please select a shipper before clicking [Lookup Shipper]");
+                }
+               
+               
+            }
+            catch (Exception ex)
+            {
+                //TODO: Log the exception
+                MessageBox.Show("Error: " + ex.Message);
+            }
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int shipperId;
+                if (int.TryParse(lblShipperID.Text, out shipperId))
+                {
+                    //do the delete...
+                    var info = new Shipper()
+                    {
+                        ShipperID = shipperId
+                    };
+
+                    NorthwindManager mgr = new NorthwindManager();
+                    mgr.DeleteShipper(info);
+                    PopulateShippersComboBox();
+                    cboShippers.SelectedItem = 0;
+
+                }
+                else
+                {
+                    MessageBox.Show("Please select a shipper before clicking [Lookup Shipper]");
+                }
+
+
+            }
+            catch (Exception ex)
+            {
+                //TODO: Log the exception
+                MessageBox.Show("Error: " + ex.Message);
+            }
+        }
         
     }
 }

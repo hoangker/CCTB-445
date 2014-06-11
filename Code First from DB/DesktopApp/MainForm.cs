@@ -49,7 +49,7 @@ namespace DesktopApp
             shippersfrm.MdiParent = this;
             shippersfrm.WindowState = FormWindowState.Maximized;
             shippersfrm.Show(); // we do NOT pause here as we show the form..
-            MessageBox.Show("Here's the ViewShopper's Form");
+            //MessageBox.Show("Here's the ViewShopper's Form");
         }
 
         private void customerOrdersToolStripMenuItem_Click(object sender, EventArgs e)
