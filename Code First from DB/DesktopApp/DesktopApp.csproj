@@ -103,6 +103,9 @@
     <EmbeddedResource Include="ViewRegions.resx">
       <DependentUpon>ViewRegions.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ViewShippers.resx">
+      <DependentUpon>ViewShippers.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

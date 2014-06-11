@@ -15,3 +15,4 @@ C:\Users\WB122\Documents\GitHub\CCTB-445\Code First from DB\DesktopApp\obj\Debug
 C:\Users\WB122\Documents\GitHub\CCTB-445\Code First from DB\DesktopApp\obj\Debug\DesktopApp.pdb
 C:\Users\WB122\Documents\GitHub\CCTB-445\Code First from DB\DesktopApp\obj\Debug\DesktopApp.MainForm.resources
 C:\Users\WB122\Documents\GitHub\CCTB-445\Code First from DB\DesktopApp\obj\Debug\DesktopApp.AboutApp.resources
+C:\Users\WB122\Documents\GitHub\CCTB-445\Code First from DB\DesktopApp\obj\Debug\DesktopApp.ViewShippers.resources
