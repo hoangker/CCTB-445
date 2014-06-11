@@ -32,6 +32,28 @@ namespace NorthwindSystem.BLL
                 return info.ShipperID;
             }
         }
+
+        public void UpdateShipper(Shipper info)
+        {
+            //Note: see question and commentary on 
+            //http://stackoverflow.com/questions/15336248/entity-framework-5-updating-a-reocrd
+            using (var context = new NWContext())
+            {
+                context.Shippers.Attach(info);
+                context.Entry(info).State = EntityState.Modified;
+                context.SaveChanges();
+
+            }
+        }
+        public IList<Shipper> ListShippers()
+        {
+            using (var context = new NWContext())
+            {
+                return context.Shippers.ToList();
+            }
+        }
+
+        
         #endregion
 
         #region Legacy Code
@@ -69,6 +91,10 @@ namespace NorthwindSystem.BLL
             }
         }
         #endregion
+
+
+
+
 
 
        

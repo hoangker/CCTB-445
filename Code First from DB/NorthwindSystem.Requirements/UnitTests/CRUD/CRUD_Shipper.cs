@@ -27,7 +27,7 @@ namespace NorthwindSystem.Requirements.UnitTests.CRUD
 
         [Fact] //indicates that this is a test
         [AutoRollback] //Undo DB changes after test
-        public void Should_Add()
+        public void Should_Add_Shipper()
         { 
             //Arrange
             var sut = new NorthwindManager(); // sut is short for "Situation Under Test"
@@ -48,6 +48,47 @@ namespace NorthwindSystem.Requirements.UnitTests.CRUD
 
 
 
+        }
+
+        #region Properties for Test Data
+        //backing field
+        private static IEnumerable<object[]> _CurrentShippers = null;
+        public static IEnumerable<object[]> CurrentShippers
+        {
+            get 
+            {
+                if (_CurrentShippers == null) //lazy-loading
+                {
+                    var controller = new NorthwindManager();
+                    var temp = new List<object[]>();// empty list
+                    foreach (Shipper company in controller.ListShippers())
+                    {
+                        temp.Add(new object[] { company });
+                    }
+                    _CurrentShippers = temp;
+                }
+                return _CurrentShippers;
+            }
+        }
+             
+        #endregion
+        [Theory] //indicates that this is a test with (potentially) external data
+        [PropertyData("CurrentShippers")]
+        [AutoRollback]
+        public void Should_Update_Shippers(Shipper existing)
+        { 
+            //Arrange
+            existing.Phone = "780.999.9998";
+            var sut = new NorthwindManager();
+
+            //Act
+            sut.UpdateShipper(existing);
+
+            //Assert
+            var actual = sut.GetShipper(existing.ShipperID);
+            Assert.NotNull(actual);
+            Assert.Equal(existing.Phone, actual.Phone);
+            Assert.Equal(existing.CompanyName, actual.CompanyName);
         }
     }
 }
