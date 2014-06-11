@@ -54,6 +54,7 @@
   <ItemGroup>
     <Compile Include="Class1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UnitTests\CRUD\CRUD_Product.cs" />
     <Compile Include="UnitTests\CRUD\CRUD_Shipper.cs" />
   </ItemGroup>
   <ItemGroup>

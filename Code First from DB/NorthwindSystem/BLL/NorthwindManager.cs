@@ -69,6 +69,57 @@ namespace NorthwindSystem.BLL
         }
         #endregion
 
+
+        #region Products
+        public Product GetProduct(int productID)
+        {
+            using (var context = new NWContext())
+            {
+                return context.Products.Find(productID);
+            }
+        }
+
+        public int AddProduct(Product info)
+        {
+            using (var context = new NWContext())
+            {
+                context.Products.Add(info);
+                context.SaveChanges();
+                return info.ProductID;
+            }
+        }
+
+        public void UpdateProduct(Product info)
+        {
+            using (var context = new NWContext())
+            {
+                context.Products.Attach(info);
+                context.Entry(info).State = EntityState.Modified;
+                context.SaveChanges();
+
+            }
+        }
+        public IList<Product> ListProducts()
+        {
+            using (var context = new NWContext())
+            { 
+                return context.Products.ToList();
+            }
+        }
+
+        public void DeleteProduct(Product product)
+        {
+            using (var context = new NWContext())
+            {
+                var found = context.Products.Find(product.ProductID);
+                if (found != null)
+                {
+                    context.Products.Remove(found);
+                    context.SaveChanges();
+                }
+            }
+        }
+        #endregion
         #region Legacy Code
 
         public List<Employee> GetEmployees()
@@ -105,5 +156,7 @@ namespace NorthwindSystem.BLL
         }
         #endregion
 
+       
+      
     }
 }
