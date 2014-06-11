@@ -90,5 +90,31 @@ namespace NorthwindSystem.Requirements.UnitTests.CRUD
             Assert.Equal(existing.Phone, actual.Phone);
             Assert.Equal(existing.CompanyName, actual.CompanyName);
         }
+
+        [Fact] //indicates that this is a test
+        [AutoRollback] //Undo DB changes after test
+        public void Should_Delete_Shipper()
+        {
+            //Arrange
+            var sut = new NorthwindManager(); // sut is short for "Situation Under Test"
+            var expected = new Shipper()
+            {
+                CompanyName = "Tin Hoang's Transporter Service",
+                Phone = "780.231.3123"
+            };
+
+            
+            expected.ShipperID = sut.AddShipper(expected);
+            //Act
+            sut.DeleteShipper(expected);
+
+            //Assert   
+            Shipper actual = sut.GetShipper(expected.ShipperID);
+            Assert.Null(actual);
+            
+
+
+
+        }
     }
 }

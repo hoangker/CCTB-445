@@ -53,7 +53,20 @@ namespace NorthwindSystem.BLL
             }
         }
 
-        
+        public void DeleteShipper(Shipper shipper)
+        {
+            using (var context = new NWContext())
+            {
+
+                //BEST practice. find shipper first, then delete
+                var found = context.Shippers.Find(shipper.ShipperID);
+                if (found != null)
+                {
+                    context.Shippers.Remove(found);
+                    context.SaveChanges();
+                }
+            }
+        }
         #endregion
 
         #region Legacy Code
@@ -92,11 +105,5 @@ namespace NorthwindSystem.BLL
         }
         #endregion
 
-
-
-
-
-
-       
     }
 }
