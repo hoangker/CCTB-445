@@ -61,6 +61,8 @@ namespace DesktopApp
         private void productSalesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ProductSalesForm frm = new ProductSalesForm();
+            frm.MdiParent = this;
+            frm.WindowState = FormWindowState.Maximized;
             frm.Show();
         }
 

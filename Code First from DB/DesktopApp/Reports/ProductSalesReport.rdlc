@@ -773,6 +773,7 @@
                               <Style>
                                 <FontFamily>Tahoma</FontFamily>
                                 <FontWeight>Bold</FontWeight>
+                                <Format>'$'#,0.00;('$'#,0.00);'-'</Format>
                                 <Color>#4c68a2</Color>
                               </Style>
                             </TextRun>
@@ -791,6 +792,7 @@
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
                         <PaddingBottom>2pt</PaddingBottom>
+                        <rd:FormatSymbolCulture>en-US</rd:FormatSymbolCulture>
                       </Style>
                     </Textbox>
                   </CellContents>
@@ -808,6 +810,7 @@
                               <Style>
                                 <FontFamily>Tahoma</FontFamily>
                                 <FontWeight>Bold</FontWeight>
+                                <Format>'$'#,0.00;('$'#,0.00);'-'</Format>
                                 <Color>#4c68a2</Color>
                               </Style>
                             </TextRun>
@@ -826,6 +829,7 @@
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
                         <PaddingBottom>2pt</PaddingBottom>
+                        <rd:FormatSymbolCulture>en-US</rd:FormatSymbolCulture>
                       </Style>
                     </Textbox>
                   </CellContents>
@@ -843,6 +847,7 @@
                               <Style>
                                 <FontFamily>Tahoma</FontFamily>
                                 <FontWeight>Bold</FontWeight>
+                                <Format>0;(0)</Format>
                                 <Color>#4c68a2</Color>
                               </Style>
                             </TextRun>
@@ -863,6 +868,7 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
+                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
