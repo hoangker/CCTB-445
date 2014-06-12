@@ -7,8 +7,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesktopApp", "DesktopApp\De
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NorthwindSystem.Requirements", "NorthwindSystem.Requirements\NorthwindSystem.Requirements.csproj", "{7FA3FCB8-1633-4B4F-9F54-E4ABD938E2D0}"
 EndProject
-Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Website", "Website\", "{DBC0DD68-D3FA-4646-A007-C9347BDF33B5}"
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Website", "http://localhost:39789", "{DBC0DD68-D3FA-4646-A007-C9347BDF33B5}"
 	ProjectSection(WebsiteProperties) = preProject
+		UseIISExpress = "true"
 		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5"
 		ProjectReferences = "{357a9884-03b2-4f47-82bc-94c5a97b36d4}|NorthwindSystem.dll;"
 		Debug.AspNetCompiler.VirtualPath = "/Website"
@@ -25,7 +26,7 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Website", "Website\", "{DBC
 		Release.AspNetCompiler.ForceOverwrite = "true"
 		Release.AspNetCompiler.FixedNames = "false"
 		Release.AspNetCompiler.Debug = "False"
-		VWDPort = "39789"
+		SlnRelativePath = "Website\"
 	EndProjectSection
 EndProject
 Global
